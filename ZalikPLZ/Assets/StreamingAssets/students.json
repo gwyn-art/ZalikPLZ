@@ -1,0 +1,45 @@
+{
+  "studentsList":
+    [
+      {
+        "name": "Keksolog",
+        "markWanted": "85",
+        "markMin": "80",
+        "markDeserve": "81",
+        "startSpeach":
+          [
+            "Hello",
+            "Nice Day isn't it?"
+          ],
+        "endGoodSpeach":
+          [
+            "Undestandeble",
+            "Have a nice day"
+          ],
+        "enBadSpeach":
+          [
+            "..."
+          ]
+        },
+      {
+        "name": "Keksolog",
+        "markWanted": "85",
+        "markMin": "80",
+        "markDeserve": "81",
+        "startSpeach":
+          [
+            "Hello",
+            "Nice Day isn't it?"
+          ],
+        "endGoodSpeach":
+          [
+            "Undestandeble",
+            "Have a nice day"
+          ],
+        "enBadSpeach":
+          [
+            "..."
+          ]
+      }
+    ]
+}

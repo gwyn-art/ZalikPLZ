@@ -20,7 +20,6 @@ public class ChangeView : MonoBehaviour {
 		}
 
 		if(rotationStatus == -1) {
-			print(cameraRotationX);
 			if(cameraRotationX > studentViewRotation) {
 				transform.rotation = Quaternion.Euler(new Vector3(--cameraRotationX, transform.rotation.y, transform.rotation.z));
 			}
