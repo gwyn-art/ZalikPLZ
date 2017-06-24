@@ -5,31 +5,34 @@ using UnityEngine;
 public class ChangeView : MonoBehaviour {
 
 	readonly float studentViewRotation = 1;
-	readonly float deskViewRotation = 35;
-	readonly float rotationSpeed = 7f;
+	readonly float deskViewRotation = -10.5f;
 	int rotationStatus = 0;
 
 	void Update () {
-		float cameraRotationX = transform.localRotation.eulerAngles.x;
+		Vector3 cameraPosition = transform.position;
+		float cameraPositionY = cameraPosition.y;
 
 		if (Input.GetKeyDown(KeyCode.Space) && rotationStatus == 0) {
-				if(cameraRotationX >= deskViewRotation)
+				if(cameraPositionY > deskViewRotation)
 					rotationStatus = -1;
 				else
 					rotationStatus = 1;
 		}
 
 		if(rotationStatus == -1) {
-			if(cameraRotationX > studentViewRotation) {
-				transform.rotation = Quaternion.Euler(new Vector3(--cameraRotationX, transform.rotation.y, transform.rotation.z));
+			print(cameraPositionY);
+			if(cameraPositionY > deskViewRotation) {
+				cameraPosition.y = cameraPositionY - 0.5f;
+				transform.position = cameraPosition;
 			}
 			else {
 				rotationStatus = 0;
 			}
 		}
 		else if(rotationStatus == 1) {
-			if(cameraRotationX < deskViewRotation) {
-				transform.rotation = Quaternion.Euler(new Vector3(++cameraRotationX, transform.rotation.y, transform.rotation.z));
+			if(cameraPositionY < studentViewRotation) {
+				cameraPosition.y = cameraPositionY + 0.5f;
+				transform.position = cameraPosition;
 			}
 			else {
 				rotationStatus = 0;

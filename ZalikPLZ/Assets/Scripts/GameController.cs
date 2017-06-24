@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour {
 		Vector3 studentInitPosition = student.transform.position;
 		studentInitPosition.x = -10;
 		studentInitPosition.y = -3;
-		studentInitPosition.z = 7;
+		studentInitPosition.z = 9;
 		student.transform.position = studentInitPosition;
 		currentStudent.StudentObject = student;
 		moveToDesk(currentStudent);
