@@ -20,7 +20,6 @@ public class ChangeView : MonoBehaviour {
 		}
 
 		if(rotationStatus == -1) {
-			print(cameraPositionY);
 			if(cameraPositionY > deskViewRotation) {
 				cameraPosition.y = cameraPositionY - 0.5f;
 				transform.position = cameraPosition;

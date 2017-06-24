@@ -5,6 +5,13 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GetInputNote : MonoBehaviour {
+	private static int grade;
+
+	public static int Grade {
+		get {
+			return grade;
+		}
+	}
 
 	void Start (){
 		var input = gameObject.GetComponent<InputField>();
@@ -14,6 +21,6 @@ public class GetInputNote : MonoBehaviour {
 	}
 
 	private void SubmitName(string arg0){
-		Debug.Log(arg0);
+		grade = int.TryParse(arg0);
 	}
 }
