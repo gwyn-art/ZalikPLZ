@@ -4,6 +4,12 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
+/ZalikPLZ/[Ll]ibrary/
+/ZalikPLZ/[Tt]emp/
+/ZalikPLZ/[Oo]bj/
+/ZalikPLZ/[Bb]uild/
+/ZalikPLZ/[Bb]uilds/
+/ZalikPLZ/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
