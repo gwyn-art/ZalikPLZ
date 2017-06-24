@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System;
 
 public class GetInputNote : MonoBehaviour {
 	private static int grade;
@@ -21,6 +22,6 @@ public class GetInputNote : MonoBehaviour {
 	}
 
 	private void SubmitName(string arg0){
-		grade = int.TryParse(arg0);
+		grade = Int32.Parse(arg0);
 	}
 }
