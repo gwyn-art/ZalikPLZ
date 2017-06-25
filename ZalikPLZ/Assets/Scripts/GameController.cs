@@ -101,6 +101,8 @@ public class GameController : MonoBehaviour {
 		studentInitPosition.z = 9;
 		student.transform.position = studentInitPosition;
 		currentStudent.StudentObject = student;
+		Tablet.current.updateMarks(currentStudent.homeWorks);
+		CreditBookOpen.current.updateMarks(currentStudent.anotherSubjects);
 		Texture2D studentSprite = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.sprite);
 		currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite =
 			Sprite.Create(studentSprite, new Rect(0, 0, studentSprite.width, studentSprite.height),

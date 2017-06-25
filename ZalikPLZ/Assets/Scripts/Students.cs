@@ -31,6 +31,10 @@ public class Students {
 		public string[] endGoodSpeach;
 		//what student say on bad end
 		public string[] endBadSpeach;
+		// home works marks
+		public int[] homeWorks;
+		//marks from another subjects
+		public int[] anotherSubjects;
 		//mark student want to get
 		public int markWanted;
 		//min mark with which student will not be angry
