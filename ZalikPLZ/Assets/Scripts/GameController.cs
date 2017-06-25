@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameController : MonoBehaviour {
 
@@ -23,11 +24,6 @@ public class GameController : MonoBehaviour {
 			currentStudent = StudentsController.getNextStudent();
 			initStudent();
 			dataIsLoaded = true;
-		}
-
-		//event on puting mark
-		if(Input.GetMouseButtonDown(0)) {
-			isEndTalking = true;
 		}
 
 		if(isMoveToDesk) {
@@ -70,7 +66,9 @@ public class GameController : MonoBehaviour {
 		}
 
 		if(isEndTalking) {
-			string messege = currentStudent.say(false, true);
+			string messege = currentStudent.say(false, currentStudent.isSatisfyted(GetInputNote.Grade));
+			ChangeRating.current.change(GetInputNote.Grade, currentStudent);
+
 			if(messege != null) {
 				print(messege);
 			}
@@ -79,9 +77,20 @@ public class GameController : MonoBehaviour {
 				isMoveFromDesk = true;
 				oldStudent = currentStudent;
 				currentStudent = StudentsController.getNextStudent();
-				initStudent();
+				if (currentStudent != null)
+					initStudent();
+				else
+					gameEnd();
 			}
 		}
+	}
+
+	static void gameEnd () {
+		print("The End.");
+	}
+
+	public static void endTalcking () {
+		isEndTalking = true;
 	}
 
 	public static void initStudent () {
@@ -92,6 +101,10 @@ public class GameController : MonoBehaviour {
 		studentInitPosition.z = 9;
 		student.transform.position = studentInitPosition;
 		currentStudent.StudentObject = student;
+		Texture2D studentSprite = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.sprite);
+		currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite =
+			Sprite.Create(studentSprite, new Rect(0, 0, studentSprite.width, studentSprite.height),
+										new Vector2(0.5f, 0.5f));
 		moveToDesk(currentStudent);
 	}
 
