@@ -19,6 +19,7 @@ public class ChangeRating : MonoBehaviour {
 	}
 
 	void changeRating (int newRating) {
+		currentRating = newRating;
 		rtext.text = "Your rating: " + newRating;
 	}
 
