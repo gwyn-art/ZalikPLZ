@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour {
 
 		if(isEndTalking) {
 			string messege = currentStudent.say(false, currentStudent.isSatisfyted(GetInputNote.Grade));
-			//ChangeRating.current.change(GetInputNote.Grade, currentStudent);
+			ChangeRating.current.change(GetInputNote.Grade, currentStudent);
 
 			if(messege != null) {
 				print(messege);
@@ -103,11 +103,9 @@ public class GameController : MonoBehaviour {
 		currentStudent.StudentObject = student;
 		print(currentStudent.sprite);
 		Texture2D studentSprite = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.sprite);
-		print(studentSprite);
 		currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite =
 			Sprite.Create(studentSprite, new Rect(0, 0, studentSprite.width, studentSprite.height),
 										new Vector2(0.5f, 0.5f));
-		print(currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite);
 		moveToDesk(currentStudent);
 	}
 

@@ -11,7 +11,7 @@ public class ChangeRating : MonoBehaviour {
 	public readonly int deserveWeight = 3;
 	public static ChangeRating current;
 
-	void Start () {
+	void Awake () {
 		current = this;
 		rtext = GetComponent<Text>();
 		changeRating(100);
