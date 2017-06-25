@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeView : MonoBehaviour {
 
-	readonly float studentViewRotation = 1;
+	readonly float studentViewRotation = 0;
 	readonly float deskViewRotation = -10.5f;
 	int rotationStatus = 0;
 
