@@ -20,7 +20,7 @@ public class ChangeRating : MonoBehaviour {
 
 	void changeRating (int newRating) {
 		currentRating = newRating;
-		rtext.text = "Your rating: " + newRating;
+		rtext.text = "" + newRating;
 	}
 
 	public void change(int grade, Students.Student student) {
