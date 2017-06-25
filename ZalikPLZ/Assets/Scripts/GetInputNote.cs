@@ -23,5 +23,6 @@ public class GetInputNote : MonoBehaviour {
 
 	private void SubmitName(string arg0){
 		grade = Int32.Parse(arg0);
+		GameController.endTalcking();
 	}
 }

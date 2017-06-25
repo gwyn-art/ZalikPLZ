@@ -37,6 +37,12 @@ public class Students {
 		public int markMin;
 		//mark student deserve
 		public int markDeserve;
+		//background
+		public string sprite;
+
+		public bool isSatisfyted (int grade) {
+			return grade > markMin ? true : false;
+		}
 
 		public string say (bool start, bool goodEnd) {
 			if(start) {

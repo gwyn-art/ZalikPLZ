@@ -16,10 +16,11 @@
             "Undestandeble",
             "Have a nice day"
           ],
-        "enBadSpeach":
+        "endBadSpeach":
           [
             "..."
-          ]
+          ],
+          "sprite": "01S_Idle"
         },
       {
         "name": "Keksolog",
@@ -36,10 +37,11 @@
             "Undestandeble",
             "Have a nice day"
           ],
-        "enBadSpeach":
+        "endBadSpeach":
           [
             "..."
-          ]
+          ],
+          "sprite": "01S_Idle"
       }
     ]
 }
