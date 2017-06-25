@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class CreditBookInteraction : MonoBehaviour {
 
+	public static CreditBookInteraction current;
 
-	// Use this for initialization
 	void Start () {
-		
+		current = this;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+ 	void OnMouseDown () {
+		this.hide();
+	  CreditBookOpen.current.show();
+	}
+
+	public void show() {
+		this.gameObject.SetActive(true);
+	}
+
+	public void hide() {
+		this.gameObject.SetActive(false);
 	}
 }

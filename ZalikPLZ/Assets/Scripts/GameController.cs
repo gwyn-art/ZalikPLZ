@@ -97,16 +97,25 @@ public class GameController : MonoBehaviour {
 		GameObject student = Instantiate(StudentsController.StudentPrefab);
 		Vector3 studentInitPosition = student.transform.position;
 		studentInitPosition.x = -10;
-		studentInitPosition.y = -3;
+		studentInitPosition.y = -1.9f;
 		studentInitPosition.z = 9;
 		student.transform.position = studentInitPosition;
 		currentStudent.StudentObject = student;
+
 		Tablet.current.updateMarks(currentStudent.homeWorks);
+		Tablet.current.updatePlagiats(currentStudent.plagiats);
 		CreditBookOpen.current.updateMarks(currentStudent.anotherSubjects);
+
 		Texture2D studentSprite = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.sprite);
 		currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite =
 			Sprite.Create(studentSprite, new Rect(0, 0, studentSprite.width, studentSprite.height),
 										new Vector2(0.5f, 0.5f));
+
+		Texture2D studentWorkSprite = Resources.Load<Texture2D>("StudentsWorks/" + currentStudent.spriteWork);
+		Test.current.updateBG(Sprite.Create(studentWorkSprite,
+										new Rect(0, 0, studentWorkSprite.width, studentWorkSprite.height),
+										new Vector2(0.5f, 0.5f), 180f));
+
 		moveToDesk(currentStudent);
 	}
 

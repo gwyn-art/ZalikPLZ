@@ -8,6 +8,20 @@ public class CreditBookOpen : MonoBehaviour {
 
 	void Start () {
 		current = this;
+		this.hide();
+	}
+
+	void OnMouseDown () {
+		this.hide();
+	  CreditBookInteraction.current.show();
+	}
+
+	public void show() {
+		this.gameObject.SetActive(true);
+	}
+
+	public void hide() {
+		this.gameObject.SetActive(false);
 	}
 
 	public void updateMarks (int[] marks) {

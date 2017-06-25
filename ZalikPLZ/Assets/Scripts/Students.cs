@@ -33,6 +33,8 @@ public class Students {
 		public string[] endBadSpeach;
 		// home works marks
 		public int[] homeWorks;
+		//plagiats
+		public int[] plagiats;
 		//marks from another subjects
 		public int[] anotherSubjects;
 		//mark student want to get
@@ -41,6 +43,8 @@ public class Students {
 		public int markMin;
 		//mark student deserve
 		public int markDeserve;
+		//work sprite
+		public string spriteWork;
 		//background
 		public string sprite;
 

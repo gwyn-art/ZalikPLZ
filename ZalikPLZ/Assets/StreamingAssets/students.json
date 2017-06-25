@@ -20,6 +20,7 @@
           [
             "..."
           ],
+          "spriteWork": "SW_01",
           "sprite": "01S_Idle",
           "homeWorks":
           [
@@ -29,6 +30,14 @@
             4,
             11,
             45
+          ],
+          "plagiats":
+          [
+            0,
+            20,
+            30,
+            95,
+            0
           ],
           "anotherSubjects":
           [
@@ -57,13 +66,24 @@
             [
               "..."
             ],
-            "sprite": "01S_Idle",
+            "spriteWork": "SW_02",
+            "sprite": "02S_Idle",
             "homeWorks":
             [
-              9,
-              9,
-              9,
-              9
+              1,
+              2,
+              3,
+              4,
+              11,
+              45
+            ],
+            "plagiats":
+            [
+              0,
+              20,
+              30,
+              95,
+              0
             ],
             "anotherSubjects":
             [
