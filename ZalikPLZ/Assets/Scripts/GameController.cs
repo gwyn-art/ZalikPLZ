@@ -25,9 +25,12 @@ public class GameController : MonoBehaviour {
 	public GameObject level6;
 	public GameObject level7;
 
-
+	AudioController ac;
 
 	void Start () {
+		
+		ac = GetComponent<AudioController> ();
+		ac.mainTune ();
 		level1.SetActive (false);
 		level2.SetActive (false);
 		level3.SetActive (false);
