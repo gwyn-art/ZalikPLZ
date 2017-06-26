@@ -9,7 +9,7 @@ public class Students {
 	[System.Serializable]
 	public class Student {
 		public float speed = 2f;
-		public float pointOnDesk = 5f;
+		public float pointOnDesk = 1.5f;
 		private GameObject studentObject;
 		private bool speachCondition;
 		private int textCount;
@@ -31,14 +31,26 @@ public class Students {
 		public string[] endGoodSpeach;
 		//what student say on bad end
 		public string[] endBadSpeach;
+		// home works marks
+		public int[] homeWorks;
+		//plagiats
+		public int[] plagiats;
+		//marks from another subjects
+		public int[] anotherSubjects;
+		//list of + and - for attendance on classes
+		public string[] attendance;
 		//mark student want to get
 		public int markWanted;
 		//min mark with which student will not be angry
 		public int markMin;
 		//mark student deserve
 		public int markDeserve;
+		//work sprite
+		public string spriteWork;
 		//background
 		public string sprite;
+		//photo in credit book
+		public string creditBookPhoto;
 
 		public bool isSatisfyted (int grade) {
 			return grade > markMin ? true : false;
