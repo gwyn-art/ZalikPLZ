@@ -15,7 +15,26 @@ public class GameController : MonoBehaviour {
 	private readonly float timeTOWait = 1;
 	private float timeIsWaiting = 1;
 
+	int studentsCounter = 0;
+
+	public GameObject level1;
+	public GameObject level2;
+	public GameObject level3;
+	public GameObject level4;
+	public GameObject level5;
+	public GameObject level6;
+	public GameObject level7;
+
+
+
 	void Start () {
+		level1.SetActive (false);
+		level2.SetActive (false);
+		level3.SetActive (false);
+		level4.SetActive (false);
+		level5.SetActive (false);
+		level6.SetActive (false);
+		level7.SetActive (false);
 
 	}
 
@@ -24,6 +43,9 @@ public class GameController : MonoBehaviour {
 			currentStudent = StudentsController.getNextStudent();
 			initStudent();
 			dataIsLoaded = true;
+			studentsCounter += 1;
+			Debug.Log (studentsCounter);
+			StartCoroutine (loadLevel());
 		}
 
 		if(isMoveToDesk) {
@@ -47,6 +69,7 @@ public class GameController : MonoBehaviour {
 					StudentText.current.clear();
 					Destroy(onGoingStudent);
 				}
+
 		}
 
 		if(timeIsWaiting > 0) {
@@ -72,17 +95,28 @@ public class GameController : MonoBehaviour {
 			ChangeRating.current.change(GetInputNote.Grade, currentStudent);
 			if(messege != null) {
 				StudentText.current.addLine(messege);
+
 			}
 			else {
 				isEndTalking = false;
 				isMoveFromDesk = true;
 				oldStudent = currentStudent;
 				currentStudent = StudentsController.getNextStudent();
-				if (currentStudent != null)
-					initStudent();
+
+				if (currentStudent != null) {
+					initStudent ();
+
+					//LOAD LEVEL NAME SCENE
+					studentsCounter += 1;
+					Debug.Log (studentsCounter);
+					StartCoroutine (loadLevel());
+
+				}
 				else
 					gameEnd();
 			}
+				
+
 		}
 	}
 
@@ -129,6 +163,32 @@ public class GameController : MonoBehaviour {
 
 	public static void moveToDesk (Students.Student student) {
 		isMoveToDesk = true;
+	}
+
+
+	IEnumerator loadLevel(){		
+		this.levelName ().SetActive (true);
+		yield return new WaitForSeconds (2f);
+		this.levelName ().SetActive (false);
+
+	}
+
+	public GameObject levelName(){
+		if(studentsCounter == 1)
+			return level1;
+		else if(studentsCounter == 2)
+			return level2;
+		else if(studentsCounter == 3)
+			return level3;
+		else if(studentsCounter == 4)
+			return level4;
+		else if(studentsCounter == 5)
+			return level5;
+		else if(studentsCounter == 6)
+			return level6;
+		else 
+			return level7;
+
 	}
 
 }

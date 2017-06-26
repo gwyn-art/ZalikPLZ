@@ -13,6 +13,8 @@ public class StudentsController : MonoBehaviour {
 	private static int currentSudent = 0;
 	private static bool dataIsLoaded = false;
 
+	bool isGameEnd = false;
+
 	public static bool DataIsLoaded {
 			get {
 				return dataIsLoaded;
