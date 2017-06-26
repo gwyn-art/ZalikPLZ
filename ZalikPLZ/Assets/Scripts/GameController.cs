@@ -114,6 +114,7 @@ public class GameController : MonoBehaviour {
 										new Vector2(0.5f, 0.5f));
 
 		Texture2D creditBookPhoto = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.creditBookPhoto);
+		print(CreditBookPhoto.current);
 		CreditBookPhoto.current.updateBG(Sprite.Create(creditBookPhoto,
 										new Rect(0, 0, creditBookPhoto.width, creditBookPhoto.height),
 										new Vector2(0.5f, 0.5f)));
