@@ -6,12 +6,12 @@ public class CreditBookPhoto : MonoBehaviour {
 
 	public static CreditBookPhoto current;
 
-	void Start () {
+	void Awake () {
 		current = this;
 	}
 
 	public void updateBG(Sprite sprite) {
 		GetComponent<SpriteRenderer>().sprite = sprite;
 	}
-	
+
 }
