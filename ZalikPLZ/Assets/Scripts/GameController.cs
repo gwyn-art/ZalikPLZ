@@ -17,28 +17,17 @@ public class GameController : MonoBehaviour {
 
 	int studentsCounter = 0;
 
-	public GameObject level1;
-	public GameObject level2;
-	public GameObject level3;
-	public GameObject level4;
-	public GameObject level5;
-	public GameObject level6;
-	public GameObject level7;
+	public UILabel levelLabel;
+	public GameObject level;
+
 
 	AudioController ac;
 
 	void Start () {
 		
 		ac = GetComponent<AudioController> ();
-		ac.mainTune ();
-		level1.SetActive (false);
-		level2.SetActive (false);
-		level3.SetActive (false);
-		level4.SetActive (false);
-		level5.SetActive (false);
-		level6.SetActive (false);
-		level7.SetActive (false);
-
+		//ac.mainTune ();
+		level.SetActive (false);
 	}
 
 	void FixedUpdate () {
@@ -170,27 +159,10 @@ public class GameController : MonoBehaviour {
 
 
 	IEnumerator loadLevel(){		
-		this.levelName ().SetActive (true);
+		this.level.SetActive (true);
+		this.levelLabel.text = "Level " + studentsCounter;
 		yield return new WaitForSeconds (2f);
-		this.levelName ().SetActive (false);
-
-	}
-
-	public GameObject levelName(){
-		if(studentsCounter == 1)
-			return level1;
-		else if(studentsCounter == 2)
-			return level2;
-		else if(studentsCounter == 3)
-			return level3;
-		else if(studentsCounter == 4)
-			return level4;
-		else if(studentsCounter == 5)
-			return level5;
-		else if(studentsCounter == 6)
-			return level6;
-		else 
-			return level7;
+		this.level.SetActive (false);
 
 	}
 
