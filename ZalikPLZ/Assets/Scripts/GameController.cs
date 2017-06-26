@@ -106,11 +106,17 @@ public class GameController : MonoBehaviour {
 		Tablet.current.updateMarks(currentStudent.homeWorks);
 		Tablet.current.updatePlagiats(currentStudent.plagiats);
 		CreditBookOpen.current.updateMarks(currentStudent.anotherSubjects);
+		TabletStudent.current.updateAttendance(currentStudent.attendance);
 
 		Texture2D studentSprite = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.sprite);
 		currentStudent.StudentObject.GetComponent<SpriteRenderer>().sprite =
 			Sprite.Create(studentSprite, new Rect(0, 0, studentSprite.width, studentSprite.height),
 										new Vector2(0.5f, 0.5f));
+
+		Texture2D creditBookPhoto = Resources.Load<Texture2D>("StudentsSprites/" + currentStudent.creditBookPhoto);
+		CreditBookPhoto.current.updateBG(Sprite.Create(creditBookPhoto,
+										new Rect(0, 0, creditBookPhoto.width, creditBookPhoto.height),
+										new Vector2(0.5f, 0.5f)));
 
 		Texture2D studentWorkSprite = Resources.Load<Texture2D>("StudentsWorks/" + currentStudent.spriteWork);
 		Test.current.updateBG(Sprite.Create(studentWorkSprite,

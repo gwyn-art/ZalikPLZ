@@ -37,6 +37,8 @@ public class Students {
 		public int[] plagiats;
 		//marks from another subjects
 		public int[] anotherSubjects;
+		//list of + and - for attendance on classes
+		public string[] attendance;
 		//mark student want to get
 		public int markWanted;
 		//min mark with which student will not be angry
@@ -47,6 +49,8 @@ public class Students {
 		public string spriteWork;
 		//background
 		public string sprite;
+		//photo in credit book
+		public string creditBookPhoto;
 
 		public bool isSatisfyted (int grade) {
 			return grade > markMin ? true : false;
