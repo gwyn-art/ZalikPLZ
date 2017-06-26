@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour {
 
 	public UnityEvent signalOnClick = new UnityEvent();
-	public GameObject levelBackground;
+	//public GameObject levelBackground;
 
 	public void _onClick() {
 		this.signalOnClick.Invoke ();
 	}
 
 	void Start(){
-		levelBackground.SetActive (false);
+		//levelBackground.SetActive (false);
 		signalOnClick.AddListener(this.onPlay);
 	}
 
@@ -25,9 +25,9 @@ public class StartButton : MonoBehaviour {
 
 	IEnumerator loadLevel(){
 
-		levelBackground.SetActive (true);
+		//levelBackground.SetActive (true);
 
-		yield return new WaitForSeconds (1.2f);
+		yield return new WaitForSeconds (0.2f);
 		SceneManager.LoadScene("Classroom");
 	}
 

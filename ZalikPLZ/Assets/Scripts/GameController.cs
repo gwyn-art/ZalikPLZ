@@ -20,7 +20,8 @@ public class GameController : MonoBehaviour {
 
 	public UILabel levelLabel;
 	public GameObject level;
-
+	public GameObject gGame;
+	public GameObject bGame;
 
 	AudioController ac;
 
@@ -29,6 +30,8 @@ public class GameController : MonoBehaviour {
 		ac = GetComponent<AudioController> ();
 		//ac.mainTune ();
 		level.SetActive (false);
+		gGame.SetActive (false);
+		bGame.SetActive (false);
 	}
 
 	void FixedUpdate () {
@@ -113,7 +116,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	static void gameEnd() {
+	public void gameEnd() {
 		if(ChangeRating.current.currentRating >= 60) {
 			goodGameEnd();
 		}
@@ -122,12 +125,14 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	static void goodGameEnd () {
-		print("The GOOD End.");
+	public void goodGameEnd () {
+		this.gGame.SetActive (true);
+
 	}
 
-	static void badGameEnd () {
-		print("The BAD End.");
+	public void badGameEnd () {
+		this.bGame.SetActive (true);
+
 	}
 
 	public static void endTalcking () {
