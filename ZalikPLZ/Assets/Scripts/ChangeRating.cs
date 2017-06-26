@@ -7,7 +7,7 @@ using System;
 public class ChangeRating : MonoBehaviour {
 
 	Text rtext;
-	int currentRating = 100;
+	public int currentRating = 100;
 	public readonly int studentWeight = 2;
 	public readonly int deserveWeight = 3;
 	public static ChangeRating current;
@@ -26,6 +26,14 @@ public class ChangeRating : MonoBehaviour {
 	public void change(int grade, Students.Student student) {
 		int newRating = currentRating + (grade - student.markWanted + grade - student.markMin) * studentWeight +
 									(Math.Abs(grade - student.markDeserve) * -1 + 3) * deserveWeight;
+
+		if(newRating >= currentRating) {
+			AudioController.current.rightGradeTune();
+		}
+		else {
+			AudioController.current.wrongGradeTune();
+		}
+
 		if(newRating > 100)
 			newRating = 100;
 		else if(newRating < 0)

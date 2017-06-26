@@ -27,7 +27,10 @@ public class StudentsController : MonoBehaviour {
 	}
 
 	public static Students.Student getNextStudent () {
+		if(currentSudent < loadedStudents.studentsList.Length)
 			return loadedStudents.studentsList[currentSudent++];
+		else
+			return null;
 	}
 
 	private static void loadData () {

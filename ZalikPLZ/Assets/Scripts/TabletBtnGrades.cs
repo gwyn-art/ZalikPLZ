@@ -6,7 +6,8 @@ public class TabletBtnGrades : MonoBehaviour {
 
 	void OnMouseDown () {
 		TabletStudent.current.hide();
+		TabletHint.current.hide();
 		Tablet.current.show();
 	}
-	
+
 }
