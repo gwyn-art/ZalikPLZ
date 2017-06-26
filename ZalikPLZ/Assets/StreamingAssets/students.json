@@ -2,14 +2,15 @@
   "studentsList":
     [
       {
-        "name": "Keksolog",
-        "markWanted": "85",
-        "markMin": "80",
-        "markDeserve": "81",
+        "name": "Tutorial",
+        "markWanted": "95",
+        "markMin": "85",
+        "markDeserve": "91",
         "startSpeach":
           [
-            "Hello",
-            "Nice Day isn't it?"
+            "Good morning!",
+			" I hope I wrote the test ",
+			"normally. I'm so worried ..."
           ],
         "endGoodSpeach":
           [
@@ -18,33 +19,33 @@
           ],
         "endBadSpeach":
           [
-            "..."
+            "Thank you!"
           ],
           "spriteWork": "SW_01",
           "sprite": "01S_Idle",
-          "creditBookPhoto": "02S_Idle",
+          "creditBookPhoto": "01S_Idle",
           "homeWorks":
           [
-            1,
-            2,
-            3,
-            4,
-            11,
-            45
+            10,
+            10,
+            9,
+            10,
+            14,
+            53
           ],
           "plagiats":
           [
             0,
-            20,
-            30,
-            95,
+            0,
+            0,
+            0,
             0
           ],
           "anotherSubjects":
           [
-            75,
+            85,
             89,
-            63,
+            98,
             94
           ],
           "attendance":
@@ -57,49 +58,51 @@
           ]
         },
         {
-          "name": "Keksolog",
-          "markWanted": "85",
-          "markMin": "80",
-          "markDeserve": "81",
+          "name": "Absent",
+          "markWanted": "81",
+          "markMin": "65",
+          "markDeserve": "79",
           "startSpeach":
             [
-              "Hello",
-              "Nice Day isn't it?"
+             "Hello! I came for the exam.",
+			 "To you, probably ..."
+
             ],
           "endGoodSpeach":
             [
-              "Undestandeble",
+              "Thank you",
               "Have a nice day"
             ],
           "endBadSpeach":
             [
-              "..."
+              "But I've made all ",
+			  "the homeworks"
             ],
             "spriteWork": "SW_02",
             "sprite": "02S_Idle",
-            "creditBookPhoto": "01S_Idle",
+            "creditBookPhoto": "02S_Idle",
             "homeWorks":
             [
-              1,
-              2,
-              3,
-              4,
-              11,
-              45
+              10,
+              10,
+              9,
+              10,
+              15,
+              54
             ],
             "plagiats":
             [
               0,
-              20,
-              30,
-              95,
+              0,
+              0,
+              0,
               0
             ],
             "anotherSubjects":
             [
-              75,
-              89,
-              63,
+              81,
+              86,
+              77,
               94
             ],
             "attendance":
@@ -110,6 +113,293 @@
               "-",
               "-"
             ]
+        },
+		{
+        "name": "Plagiator",
+        "markWanted": "0",
+        "markMin": "0",
+        "markDeserve": "0",
+        "startSpeach":
+          [
+             "I attended all the lectures!",
+			 "Uploaded  all  tasks! I want my A!"
+
+          ],
+        "endGoodSpeach":
+          [
+            "Thank you!"
+            
+          ],
+        "endBadSpeach":
+          [
+            "But I've made all the homeworks!",
+			"It's unfairly"
+          ],
+          "spriteWork": "SW_03",
+          "sprite": "03S_Idle",
+          "creditBookPhoto": "03S_Idle",
+          "homeWorks":
+          [
+            10,
+            10,
+            10,
+            10,
+            15,
+            55
+          ],
+          "plagiats":
+          [
+            100,
+            100,
+            100,
+            99,
+            96
+          ],
+          "anotherSubjects":
+          [
+            75,
+            78,
+            63,
+            61
+          ],
+          "attendance":
+          [
+            "+",
+            "+",
+            "-",
+            "+",
+            "+"
+          ]
+        },
+		{
+        "name": "StupidHightAchiever",
+        "markWanted": "85",
+        "markMin": "75",
+        "markDeserve": "80",
+        "startSpeach":
+          [
+            "I'm always nervous during",
+			"the test …"
+
+          ],
+        "endGoodSpeach":
+          [
+            "Thank you!",
+            "You always understand me"
+          ],
+        "endBadSpeach":
+          [
+            "But I felt bed during ",
+			"the test. So ok"
+          ],
+          "spriteWork": "SW_04",
+          "sprite": "04S_Idle",
+          "creditBookPhoto": "04S_Idle",
+          "homeWorks":
+          [
+            10,
+            10,
+            10,
+            10,
+            15,
+            55
+          ],
+          "plagiats":
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "anotherSubjects":
+          [
+            75,
+            89,
+            63,
+            94
+          ],
+          "attendance":
+          [
+            "+",
+            "+",
+            "+",
+            "+",
+            "+"
+          ]
+        },
+		{
+        "name": "ForeignCreditBook",
+        "markWanted": "0",
+        "markMin": "0",
+        "markDeserve": "0",
+        "startSpeach":
+          [
+            "Good day",
+            "It's nice to meet you this ",
+			"sunny morning. I'm Ivan Ivanov"
+          ],
+        "endGoodSpeach":
+          [
+            "Thank you!",
+            "See you later"
+          ],
+        "endBadSpeach":
+          [
+            "I've just changed my style!",
+			"It's not fairly"
+          ],
+          "spriteWork": "SW_05",
+          "sprite": "05S_Idle",
+          "creditBookPhoto": "06S_Idle",
+          "homeWorks":
+          [
+            10,
+            10,
+            10,
+            10,
+            15,
+            55
+          ],
+          "plagiats":
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "anotherSubjects":
+          [
+            75,
+            89,
+            63,
+            94
+          ],
+          "attendance":
+          [
+            "-",
+            "-",
+            "+",
+            "-",
+            "-"
+          ]
+        },
+		{
+        "name": "Corruptioner",
+        "markWanted": "91",
+        "markMin": "81",
+        "markDeserve": "60",
+        "startSpeach":
+          [
+            "Do you know who my parents are?",
+			"Very influential people ... ",
+			"I think you understood me …"
+
+          ],
+        "endGoodSpeach":
+          [
+        
+            "I will be grateful"
+          ],
+        "endBadSpeach":
+          [
+            "You do not know ",
+			"who you are dealing with"
+          ],
+          "spriteWork": "SW_06",
+          "sprite": "06S_Idle",
+          "creditBookPhoto": "06S_Idle",
+          "homeWorks":
+          [
+            10,
+            10,
+            10,
+            10,
+            15,
+            55
+          ],
+          "plagiats":
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "anotherSubjects":
+          [
+            75,
+            77,
+            71,
+            80
+          ],
+          "attendance":
+          [
+            "+",
+            "-",
+            "+",
+            "-",
+            "-"
+          ]
+        },
+		{
+        "name": "Max",
+        "markWanted": "100",
+        "markMin": "91",
+        "markDeserve": "87",
+        "startSpeach":
+          [
+            "I already passed everything.",
+			"I think 91 will be enough."
+          ],
+        "endGoodSpeach":
+          [
+        
+            "Thanks, have a nice day"
+
+          ],
+        "endBadSpeach":
+          [
+            "How dare you! We agreed ",
+			"on the A! I will complain!"
+
+          ],
+          "spriteWork": "SW_07",
+          "sprite": "07S_Idle",
+          "creditBookPhoto": "07S_Idle",
+          "homeWorks":
+          [
+            10,
+            10,
+            5,
+            10,
+            15,
+            50
+          ],
+          "plagiats":
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "anotherSubjects":
+          [
+            95,
+            100,
+            98,
+            96
+          ],
+          "attendance":
+          [
+            "+",
+            "+",
+            "+",
+            "+",
+            "-"
+          ]
         }
     ]
 }
