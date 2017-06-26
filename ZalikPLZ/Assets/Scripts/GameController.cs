@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour {
 				onGoingStudent.transform.position + new Vector3(currentStudent.speed * Time.deltaTime, 0, 0);
 				if(onGoingStudent.transform.position.x > currentStudent.pointOnDesk) {
 					isMoveToDesk = false;
+					StudentText.current.clear();
 					isStartTalking = true;
 				}
 		}
@@ -43,6 +44,7 @@ public class GameController : MonoBehaviour {
 				Vector2 screenPosition = Camera.main.WorldToScreenPoint (transform.position);
 				if(screenPosition.x < onGoingStudent.transform.position.x) {
 					isMoveFromDesk = false;
+					StudentText.current.clear();
 					Destroy(onGoingStudent);
 				}
 		}
@@ -58,7 +60,7 @@ public class GameController : MonoBehaviour {
 		if(isStartTalking) {
 			string messege = currentStudent.say(true, false);
 			if(messege != null) {
-				print(messege);
+				StudentText.current.addLine(messege);
 			}
 			else {
 				isStartTalking = false;
@@ -68,9 +70,8 @@ public class GameController : MonoBehaviour {
 		if(isEndTalking) {
 			string messege = currentStudent.say(false, currentStudent.isSatisfyted(GetInputNote.Grade));
 			ChangeRating.current.change(GetInputNote.Grade, currentStudent);
-
 			if(messege != null) {
-				print(messege);
+				StudentText.current.addLine(messege);
 			}
 			else {
 				isEndTalking = false;

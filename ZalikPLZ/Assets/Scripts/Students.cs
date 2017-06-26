@@ -9,7 +9,7 @@ public class Students {
 	[System.Serializable]
 	public class Student {
 		public float speed = 2f;
-		public float pointOnDesk = 5f;
+		public float pointOnDesk = 1.5f;
 		private GameObject studentObject;
 		private bool speachCondition;
 		private int textCount;
