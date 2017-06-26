@@ -24,8 +24,15 @@ public class ChangeRating : MonoBehaviour {
 	}
 
 	public void change(int grade, Students.Student student) {
-		int newRating = currentRating + (grade - student.markWanted + grade - student.markMin) * studentWeight +
-									(Math.Abs(grade - student.markDeserve) * -1 + 3) * deserveWeight;
+		int newRating = 0;
+		if(student.markWanted - student.markDeserve < 20) {
+	 		newRating = currentRating + (grade - student.markWanted + grade - student.markMin) * studentWeight +
+									(Math.Abs(grade - student.markDeserve) * -1 + 5) * deserveWeight;
+		}
+		else {
+			newRating = currentRating + (Math.Abs(grade - student.markDeserve) * -1 + 5) * deserveWeight;
+		}
+
 
 		if(newRating >= currentRating) {
 			AudioController.current.rightGradeTune();
