@@ -116,8 +116,8 @@
         },
 		{
         "name": "Plagiator",
-        "markWanted": "0",
-        "markMin": "0",
+        "markWanted": "71",
+        "markMin": "60",
         "markDeserve": "0",
         "startSpeach":
           [
@@ -128,7 +128,7 @@
         "endGoodSpeach":
           [
             "Thank you!"
-            
+
           ],
         "endBadSpeach":
           [
@@ -230,8 +230,8 @@
         },
 		{
         "name": "ForeignCreditBook",
-        "markWanted": "0",
-        "markMin": "0",
+        "markWanted": "60",
+        "markMin": "60",
         "markDeserve": "0",
         "startSpeach":
           [
@@ -299,7 +299,7 @@
           ],
         "endGoodSpeach":
           [
-        
+
             "I will be grateful"
           ],
         "endBadSpeach":
@@ -351,11 +351,11 @@
         "startSpeach":
           [
             "I already passed everything.",
-			"I think 91 will be enough."
+			"I think 100 will be enough."
           ],
         "endGoodSpeach":
           [
-        
+
             "Thanks, have a nice day"
 
           ],
