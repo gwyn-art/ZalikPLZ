@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TabletBtnStudent : MonoBehaviour {
+public class TabletBtnHint : MonoBehaviour {
 
 	void OnMouseDown () {
 		Tablet.current.hide();
-		TabletHint.current.hide();
-		TabletStudent.current.show();
+		TabletStudent.current.hide();
+		TabletHint.current.show();
 	}
 
 }

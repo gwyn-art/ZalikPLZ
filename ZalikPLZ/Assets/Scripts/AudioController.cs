@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
+	public static AudioController current;
 	//	SOUNDS
 	public AudioClip badEnd = null;
 	public AudioClip clickOnItems = null;
@@ -22,7 +23,7 @@ public class AudioController : MonoBehaviour {
 	AudioSource wrongGradeSource = null;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		badEndSource = gameObject.AddComponent<AudioSource> ();
 		badEndSource.clip = badEnd;
 
@@ -43,6 +44,8 @@ public class AudioController : MonoBehaviour {
 
 		wrongGradeSource = gameObject.AddComponent<AudioSource> ();
 		wrongGradeSource.clip = wrongGrade;
+
+		current = this;
 	}
 
 	public void badEndTune() {
@@ -69,9 +72,9 @@ public class AudioController : MonoBehaviour {
 		wrongGradeSource.Play ();
 	}
 
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

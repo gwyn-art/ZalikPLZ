@@ -5,7 +5,8 @@ using System.IO;
 
 public class GameController : MonoBehaviour {
 
-	private static Students.Student currentStudent;
+	public static GameController current;
+	public static Students.Student currentStudent;
 	private static Students.Student oldStudent;
 	private static bool dataIsLoaded = false;
 	private static bool isMoveToDesk = false;
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour {
 	AudioController ac;
 
 	void Start () {
-		
+		current = this;
 		ac = GetComponent<AudioController> ();
 		//ac.mainTune ();
 		level.SetActive (false);
@@ -38,9 +39,10 @@ public class GameController : MonoBehaviour {
 			studentsCounter += 1;
 			Debug.Log (studentsCounter);
 			StartCoroutine (loadLevel());
+			AudioController.current.stepsTune();
 		}
 
-		if(isMoveToDesk) {
+		if(isMoveToDesk && currentStudent != null) {
 			GameObject onGoingStudent = currentStudent.StudentObject;
 			onGoingStudent.transform.position =
 				onGoingStudent.transform.position + new Vector3(currentStudent.speed * Time.deltaTime, 0, 0);
@@ -54,7 +56,7 @@ public class GameController : MonoBehaviour {
 		if(isMoveFromDesk) {
 			GameObject onGoingStudent = oldStudent.StudentObject;
 			onGoingStudent.transform.position =
-				onGoingStudent.transform.position + new Vector3(currentStudent.speed * Time.deltaTime, 0, 0);
+				onGoingStudent.transform.position + new Vector3(oldStudent.speed * Time.deltaTime, 0, 0);
 				Vector2 screenPosition = Camera.main.WorldToScreenPoint (transform.position);
 				if(screenPosition.x < onGoingStudent.transform.position.x) {
 					isMoveFromDesk = false;
@@ -84,7 +86,6 @@ public class GameController : MonoBehaviour {
 
 		if(isEndTalking) {
 			string messege = currentStudent.say(false, currentStudent.isSatisfyted(GetInputNote.Grade));
-			ChangeRating.current.change(GetInputNote.Grade, currentStudent);
 			if(messege != null) {
 				StudentText.current.addLine(messege);
 
@@ -97,7 +98,7 @@ public class GameController : MonoBehaviour {
 
 				if (currentStudent != null) {
 					initStudent ();
-
+					AudioController.current.stepsTune();
 					//LOAD LEVEL NAME SCENE
 					studentsCounter += 1;
 					Debug.Log (studentsCounter);
@@ -107,13 +108,26 @@ public class GameController : MonoBehaviour {
 				else
 					gameEnd();
 			}
-				
+
 
 		}
 	}
 
-	static void gameEnd () {
-		print("The End.");
+	static void gameEnd() {
+		if(ChangeRating.current.currentRating >= 60) {
+			goodGameEnd();
+		}
+		else {
+			badGameEnd();
+		}
+	}
+
+	static void goodGameEnd () {
+		print("The GOOD End.");
+	}
+
+	static void badGameEnd () {
+		print("The BAD End.");
 	}
 
 	public static void endTalcking () {
@@ -158,7 +172,7 @@ public class GameController : MonoBehaviour {
 	}
 
 
-	IEnumerator loadLevel(){		
+	IEnumerator loadLevel(){
 		this.level.SetActive (true);
 		this.levelLabel.text = "Level " + studentsCounter;
 		yield return new WaitForSeconds (2f);
