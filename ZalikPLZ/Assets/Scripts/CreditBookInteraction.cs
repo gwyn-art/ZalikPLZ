@@ -11,6 +11,7 @@ public class CreditBookInteraction : MonoBehaviour {
 	}
 
  	void OnMouseDown () {
+		AudioController.current.clickTune();
 		this.hide();
 	  CreditBookOpen.current.show();
 	}

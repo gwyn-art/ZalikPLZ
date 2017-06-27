@@ -72,6 +72,9 @@ public class AudioController : MonoBehaviour {
 		wrongGradeSource.Play ();
 	}
 
+	public void clickTune () {
+		clickSource.Play();
+	}
 
 	// Update is called once per frame
 	void Update () {
