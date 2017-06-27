@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour {
 	private static bool isMoveFromDesk = false;
 	private static bool isStartTalking = false;
 	private static bool isEndTalking = false;
-	private readonly float timeTOWait = 1;
-	private float timeIsWaiting = 1;
+	private readonly float timeTOWait = 2;
+	private float timeIsWaiting = 2;
 
 	int studentsCounter = 0;
 
@@ -126,11 +126,13 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void goodGameEnd () {
+		AudioController.current.startAndVictoryTune();
 		this.gGame.SetActive (true);
 
 	}
 
 	public void badGameEnd () {
+		AudioController.current.badEndTune();
 		this.bGame.SetActive (true);
 
 	}
